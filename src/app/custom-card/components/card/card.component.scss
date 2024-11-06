@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+}
+
+@mixin solid-border($size) {
+    border: $size solid black;
+}
+
+.card-container {
+    width: 100%;
+    height: 100%;
+    min-width: 400px;
+    @include solid-border(2px);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-header {
+    width: 100%;
+    height: 20%;
+    @include solid-border(2px);
+
+}
+
+.card-content {
+    width: 100%;
+    height: 80%;
+    @include solid-border(2px);
+
+}

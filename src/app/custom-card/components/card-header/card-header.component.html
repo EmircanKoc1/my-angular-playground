@@ -1,1 +1,8 @@
-<p>card-header works!</p>
+<div class="header-container" [ngStyle]="{'justify-content': justify}">
+    <div class="title">
+        <ng-content select="c-card-title"></ng-content>
+    </div>
+    <div class="sub-title">
+        <ng-content select="c-card-sub-title"></ng-content>
+    </div>
+</div>
