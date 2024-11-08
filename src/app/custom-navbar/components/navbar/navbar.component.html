@@ -1,0 +1,10 @@
+<nav class="navbar">
+
+    <ng-container #navbarHeadContainer></ng-container>
+    <ng-content></ng-content>
+</nav>
+
+
+<ng-template #navbarHead>
+    <ng-content select="cn-navbar-item-head"></ng-content>
+</ng-template>
