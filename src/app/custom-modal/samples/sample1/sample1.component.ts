@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ModalComponent } from "../../components/modal/modal.component";
+import { ModalService } from '../../services/modal.service';
 
 @Component({
   selector: 'cm-sample1',
@@ -9,5 +10,20 @@ import { ModalComponent } from "../../components/modal/modal.component";
   styleUrl: './sample1.component.scss'
 })
 export class Sample1Component {
+
+  modalService: ModalService = inject(ModalService);
+
+  cancel() {
+    console.log("cancel method was executed");
+    this.modalService.closeModal();
+  }
+
+  confirm() {
+    console.log("confirm method was executed");
+    this.modalService.closeModal();
+  }
+
+
+
 
 }

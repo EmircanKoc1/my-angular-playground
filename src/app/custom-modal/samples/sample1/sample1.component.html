@@ -1,3 +1,10 @@
-<cm-modal>
-    
+<button (click)="modalService.openModal()">open modal</button>
+
+<cm-modal (cancelled)="cancel()" (confirmed)="confirm()">
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat, ratione maxime? Deserunt praesentium
+        aspernatur quis, numquam voluptate quasi necessitatibus eveniet nulla voluptatum dolorum, rem neque illum magni.
+        Perferendis, temporibus ab?</p>
+    <br>
+    <button (click)="modalService.closeModal()">Close Modal</button>
+
 </cm-modal>
