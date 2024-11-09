@@ -16,4 +16,13 @@ import { NavbarItemHeadComponent } from "../../components/navbar-item-head/navba
 })
 export class Sample1Component {
 
+  navbar4SubPanelItems: string[];
+
+  constructor() {
+    this.navbar4SubPanelItems = new Array(10).fill("navbar4 item").map((x) => {
+      return x;
+    });
+  }
+
+
 }
