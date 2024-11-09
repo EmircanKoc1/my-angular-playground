@@ -12,6 +12,9 @@ export class NavbarItemComponent {
 
   @Input("label") label: string = "label not defined";
 
+  isOpenedSubPanel: boolean = false;
+  isMouseOverSubPanel: boolean = false;
+
   @ViewChild("subPanel", {
     read: NavbarItemSubPanelComponent,
     static: true
@@ -19,12 +22,37 @@ export class NavbarItemComponent {
 
 
   openShowPanel() {
-    this.subPanelRef.showSubPanel();
+    if (!this.isOpenedSubPanel) {
+      this.subPanelRef.showSubPanel();
+      this.isOpenedSubPanel = true;
+      console.log(`openshowpanel method was executed, showPanel : ${this.isOpenedSubPanel}, is mouse over subpanel :  ${this.isMouseOverSubPanel}`);
+    }
 
   }
 
   closeShowPanel() {
+    if (this.isOpenedSubPanel) {
+      setTimeout(() => {
+        if (!this.isMouseOverSubPanel) {
+          this.closeSubPanelDirect();
+        }
+      }, 100);
+
+    }
+  }
+
+  closeSubPanelDirect() {
     this.subPanelRef.closeShowPanel();
+    this.isOpenedSubPanel = false;
+    this.mouseOutsideSubPanel();
+  }
+  mouseOverSubPanel() {
+    this.isMouseOverSubPanel = true;
+  }
+
+  mouseOutsideSubPanel() {
+    this.isMouseOverSubPanel = false;
+    this.closeSubPanelDirect();
   }
 
 

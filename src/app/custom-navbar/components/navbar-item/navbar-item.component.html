@@ -1,6 +1,10 @@
 <div class="label" (mouseover)="openShowPanel()" (mouseout)="closeShowPanel()">
     {{label}}
-    <cn-navbar-item-sub-panel class="sub-panel" #subPanel>
-        <ng-content></ng-content>
-    </cn-navbar-item-sub-panel>
+
+    <div (mouseleave)="mouseOutsideSubPanel()" (mouseenter)="mouseOverSubPanel()">
+        <cn-navbar-item-sub-panel class="sub-panel" #subPanel>
+            <ng-content></ng-content>
+        </cn-navbar-item-sub-panel>
+    </div>
+
 </div>
