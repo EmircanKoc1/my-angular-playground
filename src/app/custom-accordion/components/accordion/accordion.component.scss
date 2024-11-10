@@ -1,0 +1,27 @@
+$min-height : 30px;
+$full-width: 100%;
+
+.accordion {
+    width: $full-width;
+    height: 20%;
+    min-height: $min-height ;
+    background-color: wheat;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    box-sizing: border-box;
+    cursor: pointer;
+
+}
+
+.accordion-item {
+    width: $full-width;
+    min-height: $min-height;
+    height: auto;
+    box-sizing: border-box;
+    border: 2px solid black;
+}
+
+.display-none {
+    display: none;
+}

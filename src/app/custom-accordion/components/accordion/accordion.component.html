@@ -1,0 +1,8 @@
+<div>
+    <div class="accordion" (click)="closeOrOpen()">
+        {{label}}
+    </div>
+    <div class="accordion-item" [ngClass]="{'display-none':!isShowAccordionItem()}">
+        <ng-content></ng-content>
+    </div>
+</div>
