@@ -1,8 +1,9 @@
 <div class="dialog-container" [ngClass]="{'display-none':!dialogService.isShowDialog()}">
-<!-- <div class="dialog-container" [ngClass]="{'display-none':false}"> -->
-
-    <div class="dialog-box">
+    <div class="dialog-box"
+        [ngStyle]="{'width':dialogService.dialogOptions().dialogBoxWidth , 'height' : dialogService.dialogOptions().dialogBoxHeight , 'background-color':dialogService.dialogOptions().dialogBoxBackgroundColor}">
+        
         <ng-container #dialogBox></ng-container>
     </div>
-    <div (click)="closeDialogClickBackdrop()" class="dialog-backdrop"></div>
+    <div (click)="closeDialogClickBackdrop()" class="dialog-backdrop"
+        [ngStyle]="{'background-color':dialogService.dialogOptions().dialogBackdropColor}"></div>
 </div>

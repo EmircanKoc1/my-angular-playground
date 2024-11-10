@@ -48,7 +48,7 @@ export class DialogComponent {
   }
 
 
-  openDialog(component: any) {
+  openDialog(component: any,options?:{}) {
     this.containerRef.clear();
     this.containerRef.createComponent(component);
     console.log("component opendialog method was executed");

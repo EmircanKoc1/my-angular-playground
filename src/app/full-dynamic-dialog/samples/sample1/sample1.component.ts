@@ -22,7 +22,12 @@ export class Sample1Component {
 
   openDialog2() {
     console.log("sample1 opendialog method was executed");
-    this.dialogService.openDialog(DialogContent2Component);
+    this.dialogService.openDialog(DialogContent2Component,{
+      dialogBoxWidth:"200px",
+      dialogBackdropColor:"pink",
+      dialogBoxBackgroundColor:"red",
+      dialogBoxHeight:"200px"
+    });
   }
 
   closeDialog() {

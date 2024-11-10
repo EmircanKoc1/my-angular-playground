@@ -1,5 +1,6 @@
 import { effect, Injectable, signal, Signal, WritableSignal } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { dialogOptions } from '../types/dialog-manager.service.types';
 
 @Injectable({
   providedIn: 'root'
@@ -16,8 +17,17 @@ export class DialogManagerService {
   showComponentRef: WritableSignal<any> = signal<any>(null);
   isShowDialog: WritableSignal<boolean> = signal(false);
   closeOnBackdropClick: WritableSignal<boolean> = signal(false);
+  dialogOptions: WritableSignal<dialogOptions> = signal<dialogOptions>({
+    dialogBoxWidth: "400px",
+    dialogBoxHeight: "300px",
+    dialogBackdropColor: "rgba(0, 0, 0, 0.7)",
+    dialogBoxBackgroundColor: "white"
+  });
+  openDialog(component: any, dialogOptions?: dialogOptions) {
 
-  openDialog(component: any) {
+    if (dialogOptions) {
+      this.dialogOptions.set(dialogOptions);
+    }
     this.showComponentRef.set(component);
     this.isShowDialog.set(true);
   }
