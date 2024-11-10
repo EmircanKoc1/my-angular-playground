@@ -1,10 +1,11 @@
 import { Component, effect, inject, signal, ViewChild, viewChild, ViewContainerRef, WritableSignal } from '@angular/core';
 import { DialogManagerService } from '../../services/dialog-manager.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'fdd-dialog',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './dialog.component.html',
   styleUrl: './dialog.component.scss'
 })
@@ -16,6 +17,8 @@ export class DialogComponent {
   }) containerRef!: ViewContainerRef;
 
   dialogService: DialogManagerService = inject(DialogManagerService);
+
+
 
   constructor() {
 
@@ -57,5 +60,10 @@ export class DialogComponent {
     console.log("component closedialog method was executed");
   }
 
+  closeDialogClickBackdrop() {
+    if (this.dialogService.closeOnBackdropClick() === true) {
+      this.dialogService.closeDialog();
+    }
+  }
 
 }

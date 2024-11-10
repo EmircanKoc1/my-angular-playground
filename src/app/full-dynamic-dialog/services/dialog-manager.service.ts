@@ -15,6 +15,7 @@ export class DialogManagerService {
   }
   showComponentRef: WritableSignal<any> = signal<any>(null);
   isShowDialog: WritableSignal<boolean> = signal(false);
+  closeOnBackdropClick: WritableSignal<boolean> = signal(false);
 
   openDialog(component: any) {
     this.showComponentRef.set(component);

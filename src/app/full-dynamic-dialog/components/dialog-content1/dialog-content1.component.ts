@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { DialogManagerService } from '../../services/dialog-manager.service';
 
 @Component({
   selector: 'fdd-dialog-content1',
@@ -8,5 +9,9 @@ import { Component } from '@angular/core';
   styleUrl: './dialog-content1.component.scss'
 })
 export class DialogContent1Component {
+
+  dialogService: DialogManagerService = inject(DialogManagerService);
+
+
 
 }

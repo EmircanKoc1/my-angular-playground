@@ -1,8 +1,8 @@
-<div class="dialog-container">
+<div class="dialog-container" [ngClass]="{'display-none':!dialogService.isShowDialog()}">
+<!-- <div class="dialog-container" [ngClass]="{'display-none':false}"> -->
 
     <div class="dialog-box">
         <ng-container #dialogBox></ng-container>
-        mqowpmwoqpmqw
     </div>
-    <div class="dialog-backdrop"></div>
+    <div (click)="closeDialogClickBackdrop()" class="dialog-backdrop"></div>
 </div>
